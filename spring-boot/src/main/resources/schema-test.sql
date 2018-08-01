@@ -23,7 +23,7 @@ CREATE TABLE Signing (
 CREATE TABLE Notification (
   id BIGINT(20) NOT NULL AUTO_INCREMENT,
   fkFingerprintId INT(11) NOT NULL,
-  dateTime DATETIME NOT NULL,
+  `date` DATETIME NOT NULL,
   message VARCHAR(255) NOT NULL,
   PRIMARY KEY (id),
   FOREIGN KEY (fkFingerprintId) REFERENCES Employee (fingerprintId)
