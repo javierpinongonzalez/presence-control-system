@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.stratio.challenge</groupId>
+    <artifactId>presence-control-system</artifactId>
+    <version>0.0.1</version>
+
+    <modules>
+        <module>spring-boot</module>
+        <module>presentation-rest-api</module>
+        <module>facade-between-business-logic-and-presentation</module>
+        <module>business-logic</module>
+        <module>facade-between-business-logic-and-infrastructure</module>
+        <module>infrastructure-database</module>
+        <module>utils</module>
+
+    </modules>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <project-version>0.0.1</project-version>
+        <presentation-rest-api.global-version>${project-version}</presentation-rest-api.global-version>
+        <facade-between-business-logic-and-presentation.global-version>${project-version}
+        </facade-between-business-logic-and-presentation.global-version>
+        <business-logic.global-version>${project-version}</business-logic.global-version>
+        <facade-between-business-logic-and-infrastructure.global-version>${project-version}
+        </facade-between-business-logic-and-infrastructure.global-version>
+        <infrastructure-database.global-version>${project-version}</infrastructure-database.global-version>
+        <spring-boot.global-version>${project-version}</spring-boot.global-version>
+        <utils.global-version>${project-version}</utils.global-version>
+    </properties>
+
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.4.RELEASE</version>
+    </parent>
+
+
+</project>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>presence-control-system</artifactId>
+        <groupId>com.stratio.challenge</groupId>
+        <version>0.0.1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>spring-boot</artifactId>
+
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.stratio.challenge</groupId>
+            <artifactId>presentation-rest-api</artifactId>
+            <version>${presentation-rest-api.global-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.stratio.challenge</groupId>
+            <artifactId>facade-between-business-logic-and-infrastructure</artifactId>
+            <version>${facade-between-business-logic-and-presentation.global-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.stratio.challenge</groupId>
+            <artifactId>business-logic</artifactId>
+            <version>${business-logic.global-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.stratio.challenge</groupId>
+            <artifactId>facade-between-business-logic-and-infrastructure</artifactId>
+            <version>${facade-between-business-logic-and-infrastructure.global-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.stratio.challenge</groupId>
+            <artifactId>infrastructure-database</artifactId>
+            <version>${infrastructure-database.global-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.stratio.challenge</groupId>
+            <artifactId>utils</artifactId>
+            <version>${utils.global-version}</version>
+        </dependency>
+
+        <!-- Other dependencies-->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+        <finalName>presence-control-service</finalName>
+    </build>
+
+</project>

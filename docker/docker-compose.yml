@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+  presence-control-system:
+    image: presence-control-system:0.0.1
+    ports:
+      - "10015:8080"
+    networks:
+      development:
+        aliases:
+          - presence-control-system.net
+    depends_on:
+      - "presence-control-system-db"
+    volumes:
+          - "/tmp:/tmp"
+
+  presence-control-system-db:
+    image: mysql:5.7
+    expose:
+      - "3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=presence-control-system
+      - MYSQL_USER=presence-control-system
+      - MYSQL_PASSWORD=presence-control-system
+    networks:
+      development:
+        aliases:
+          - presence_control_system_db
+
+networks:
+  development:

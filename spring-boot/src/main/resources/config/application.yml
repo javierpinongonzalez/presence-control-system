@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring.jpa.hibernate.naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+logging:
+  level:
+    presentation_rest_api: DEBUG
+    business_logic: DEBUG
+    infrastructure_database: DEBUG
+    infrastructure_filesystem: DEBUG
+
+spring:
+    datasource:
+        platform: test
+        # Create a docker container for the DB (before launching the application): docker run --rm --name presence-control-system-db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=presence-control-system -e MYSQL_USER=presence-control-system -e MYSQL_PASSWORD=presence-control-system -d mysql:5.7
+        url: jdbc:mysql://presence_control_system_db/presence-control-system?useSSL=false&useTimezone=true&serverTimezone=UTC&useLegacyDatetimeCode=false #Set UTC time zone
+        username: presence-control-system
+        password: presence-control-system
+    datasource.initialization-mode: always
+
+files:
+    time-sheets:
+        # If modified also change it on docker/docker-compose.yml
+        path: "/tmp"
+
+notifications:
+    length: 255
