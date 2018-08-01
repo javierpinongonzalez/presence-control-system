@@ -8,7 +8,6 @@ logging:
     presentation_rest_api: DEBUG
     business_logic: DEBUG
     infrastructure_database: DEBUG
-    infrastructure_filesystem: DEBUG
 
 spring:
     datasource:

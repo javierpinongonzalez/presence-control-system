@@ -66,3 +66,7 @@ The “People” department will need:
 * Improve time sheet design
 * Add notifications to time sheet
 
+**Assumptions**
+
+* Nobody can sign more than 4 times the same day
+

@@ -260,20 +260,22 @@ public class PresenceService implements IPresenceService {
                 iterator.remove();
             }
 
-            colNum = 4;
-            row = sheet.createRow(rowNum++);
-            cell = row.createCell (colNum++);
-            cell.setCellValue("Total");
+            if (totalDiffMilliseconds > 0){
+                colNum = 4;
+                row = sheet.createRow(rowNum++);
+                cell = row.createCell (colNum++);
+                cell.setCellValue("Total");
 
-            Long totalDiffSeconds = totalDiffMilliseconds / 1000;
+                Long totalDiffSeconds = totalDiffMilliseconds / 1000;
 
-            Long totalDiffMinutes = totalDiffSeconds / 60;
+                Long totalDiffMinutes = totalDiffSeconds / 60;
 
-            Long hours = totalDiffMinutes / 60;
-            Long minutes = totalDiffMinutes % 60;
+                Long hours = totalDiffMinutes / 60;
+                Long minutes = totalDiffMinutes % 60;
 
-            cell = row.createCell (colNum++);
-            cell.setCellValue(hours + "h " + minutes + "m");
+                cell = row.createCell (colNum++);
+                cell.setCellValue(hours + "h " + minutes + "m");
+            }
         }
 
         try {

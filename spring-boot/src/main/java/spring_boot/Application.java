@@ -1,11 +1,12 @@
 package spring_boot;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
+import javax.annotation.PostConstruct;
+import java.util.TimeZone;
 
 @SpringBootApplication(scanBasePackages = {
         "business_logic",
@@ -16,16 +17,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan("infrastructure_database")
 public class Application {
 
-    //FIXME delete if not logging
-    private static final Log logger = LogFactory.getLog(Application.class);
-
-    //TODO write @Override's
-
-    //FIXME es necesario?
-    //@PostConstruct
-    //void started() {
-    //    TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
-    //}
+    @PostConstruct
+    void started() {
+        TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+    }
 
 
     /**
